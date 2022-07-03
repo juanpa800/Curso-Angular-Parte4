@@ -14,7 +14,7 @@ export class AppComponent {
   lastName = "";
   relationship = "";
   age = 0;
-
+  tableDisabled = true;
   modePresentation = "list";
   namesList = ["Hugo", "Martín", "Lucas", "Mateo", "Leo", "Daniel", "Alejandro", "Pablo", "Manuel",
     "Álvaro", "Adrián", "David", "Mario", "Enzo", "Diego", "Marcos", "Izan", "Javier", "Marco", "Álex",
@@ -78,6 +78,8 @@ export class AppComponent {
   }
 
   changeView() {
+    
+    this.tableDisabled = !this.tableDisabled;
 
     if (this.modePresentation == 'table') {
       this.modePresentation = 'list';

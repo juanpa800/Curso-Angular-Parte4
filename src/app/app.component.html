@@ -61,9 +61,9 @@
           <div class="row mb-2">
             <div class="col d-flex justify-content-center">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <button class="btn btn-secondary active" name="viewList" id="viewList" checked (click)="changeView()">
+                <button class="btn btn-secondary active" name="viewList" id="viewList" checked (click)="changeView()" [disabled]=tableDisabled>
                   List</button>
-                <button class="btn btn-secondary" name="viewTable" id="viewTable" (click)="changeView()"> Table
+                <button class="btn btn-secondary" name="viewTable" id="viewTable" (click)="changeView()" [disabled]= !tableDisabled> Table
                 </button>
               </div>
             </div>
@@ -76,31 +76,32 @@
               </div>
             </div>
           </div>
-          <ng-template #table>
-            <div class="col px-0 d-flex justify-content-center">
-              <p class="my-0">
-              <table class="table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">LastName</th>
-                    <th scope="col">Relationship</th>
-                    <th scope="col">Age</th>
-                  </tr>
-                </thead>
-                <tbody *ngFor="let guest of guests">
-                  <tr>
-                    <th scope="row">{{guest.name}}</th>
-                    <td>{{guest.lastName}}</td>
-                    <td>{{guest.relationship}}</td>
-                    <td>{{guest.years}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </ng-template>
         </div>
       </div>
     </div>
   </div>
 </body>
+
+<ng-template #table>
+  <div class="col px-0 d-flex justify-content-center">
+    <p class="my-0">
+    <table class="table">
+      <thead class="thead-dark table-bordered">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">LastName</th>
+          <th scope="col">Relationship</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let guest of guests">
+        <tr>
+          <th scope="row">{{guest.name}}</th>
+          <td>{{guest.lastName}}</td>
+          <td>{{guest.relationship}}</td>
+          <td>{{guest.years}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
