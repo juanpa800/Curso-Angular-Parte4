@@ -75,6 +75,7 @@ export class AppComponent {
   }
 
   changeView(){
+
     if (this.modePresentation == 'table'){
       this.modePresentation = 'list';
     }
