@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'Curso-Angular-Parte4';
   amount = 0;
   guests: Guest[] = [new Guest("Martin", "Fernandez", "Son", 66)];
-  name = "";
-  lastName = "";
-  relationship = "";
-  age = 0;
+  nameField = "";
+  lastNameField = "";
+  relationshipField = "";
+  ageField = 0;
   tableDisabled = true;
   modePresentation = "list";
   namesList = ["Hugo", "Martín", "Lucas", "Mateo", "Leo", "Daniel", "Alejandro", "Pablo", "Manuel",
