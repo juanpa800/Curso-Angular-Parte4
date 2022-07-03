@@ -18,13 +18,37 @@
   </nav>
   <div class="jumbotron">
     <h1 class="text-center">Welcome to my Angular course number 4</h1>
+    <p class="text-center mt-2 mb-0">Page to create a family list of guests for my next party</p>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col col-12 order-2 col-md-5 order-md-1 my-2 d-flex justify-content-center">
         <form>
-          <input type="submit" value="Add to list" (click)="GuestCustom()">
+          <div class="form-group">
+            <!-- 
+              [(ngModel)]="name"
+              [(ngModel)]="lastName"
+              [(ngModel)]="relationship"
+              [(ngModel)]="age"
+             -->
+            <label for="nameField">Name: </label>
+            <input type="text" class="form-control" id="nameField" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="lastNameField">Last Name: </label>
+            <input type="text" class="form-control" id="lastNameField" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="relationshipField">Relationship </label>
+            <input type="text" class="form-control" id="relationshipField" placeholder="Relationship">
+          </div>
+          <div class="form-group">
+            <label for="ageField">Age: </label>
+            <input type="number" class="form-control" id="ageField" placeholder="Age (years)">
+          </div>
+          <button class="btn btn-success" type="submit" (click)="createCustomGuest(name,lastName,relationship,age)">Add
+            to list</button>
         </form>
       </div>
       <div class="col order-1 col-md-5 order-md-2">
@@ -47,7 +71,8 @@
           <div *ngIf="modePresentation == 'list'; else table">
             <div class="row" *ngFor="let guest of guests">
               <div class="col px-0 d-flex justify-content-center">
-                <p class="my-0">{{guest.name}} {{guest.lastName}} {{guest.relationship}} with {{guest.years}} years </p>
+                <p class="my-0">{{guest.name}} {{guest.lastName}} {{guest.relationship}} is {{guest.years}} years old
+                </p>
               </div>
             </div>
           </div>
@@ -59,7 +84,7 @@
                   <tr>
                     <th scope="col">Name</th>
                     <th scope="col">LastName</th>
-                    <th scope="col">relationship</th>
+                    <th scope="col">Relationship</th>
                     <th scope="col">Age</th>
                   </tr>
                 </thead>

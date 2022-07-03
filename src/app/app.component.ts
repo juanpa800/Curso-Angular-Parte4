@@ -9,9 +9,12 @@ import { Guest } from './guest.model';
 export class AppComponent {
   title = 'Curso-Angular-Parte4';
   amount = 0;
-  guests: Guest[] = [
-    new Guest("Martin", "Fernandez", "Son", 66)
-  ];
+  guests: Guest[] = [new Guest("Martin", "Fernandez", "Son", 66)];
+  name = "";
+  lastName = "";
+  relationship = "";
+  age = 0;
+
   modePresentation = "list";
   namesList = ["Hugo", "Martín", "Lucas", "Mateo", "Leo", "Daniel", "Alejandro", "Pablo", "Manuel",
     "Álvaro", "Adrián", "David", "Mario", "Enzo", "Diego", "Marcos", "Izan", "Javier", "Marco", "Álex",
@@ -54,7 +57,11 @@ export class AppComponent {
       this.generateLastName(),
       this.generateRelationship(),
       Math.floor(Math.random() * 100))
-      );
+    );
+  }
+
+  createCustomGuest(name: string, lastName: string, relationship: string, age: number) {
+    this.guests.push(new Guest(name, lastName, relationship, age));
   }
 
   generateName() {
@@ -70,16 +77,12 @@ export class AppComponent {
     return relationship;
   }
 
-  GuestCustom(){
-    this.createGuest()
-  }
+  changeView() {
 
-  changeView(){
-
-    if (this.modePresentation == 'table'){
+    if (this.modePresentation == 'table') {
       this.modePresentation = 'list';
     }
-    else{
+    else {
       this.modePresentation = 'table';
     }
   }
