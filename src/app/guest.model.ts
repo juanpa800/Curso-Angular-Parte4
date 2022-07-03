@@ -2,12 +2,12 @@ export class Guest {
     name: string = "";
     lastName: string = "";
     relationship: string = "";
-    age: number = 0;
+    years: number = 0;
 
-    constructor(name: string, lastName: string, relationship: string, age: number) {
+    constructor(name: string, lastName: string, relationship: string, years: number) {
         this.name = name;
         this.lastName = lastName;
         this.relationship = relationship;
-        this.age = age;
+        this.years = years;
     }
 }
