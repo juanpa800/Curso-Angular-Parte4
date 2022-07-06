@@ -97,25 +97,5 @@
 </body>
 
 <ng-template #table>
-  <div class="col px-0 d-flex justify-content-center">
-    <p class="my-0">
-    <table class="table overflow-auto">
-      <thead class="table-dark bordered">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">LastName</th>
-          <th scope="col">Relationship</th>
-          <th scope="col">Age</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let guest of guests">
-        <tr>
-          <th scope="row">{{guest.name}}</th>
-          <td>{{guest.lastName}}</td>
-          <td>{{guest.relationship}}</td>
-          <td>{{guest.years}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <app-guest-table [guests] ="guests"></app-guest-table>
 </ng-template>
