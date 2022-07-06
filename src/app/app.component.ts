@@ -8,7 +8,6 @@ import { Guest } from './guest.model';
 })
 export class AppComponent {
   title = 'Curso-Angular-Parte4';
-  amount = 0;
   guests: Guest[] = [new Guest("Martin", "Fernandez", "Son", 66)];
   nameField = "";
   lastNameField = "";

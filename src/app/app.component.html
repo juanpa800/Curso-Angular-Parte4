@@ -88,13 +88,7 @@
             </div>
           </div>
           <div *ngIf="modePresentation == 'list'; else table">
-            <div class="row" *ngFor="let guest of guests">
-              <div class="col d-flex justify-content-center">
-                <ul class="my-1">
-                  <li><span [ngClass]="{saraName:guest.name == 'Sara'}">{{guest.name}}</span> {{guest.lastName}} {{guest.relationship}} is {{guest.years}} years old</li>
-                </ul>
-              </div>
-            </div>
+            <app-guest-list *ngFor="let guest of guests" [guest] ="guest"></app-guest-list>
           </div>
         </div>
       </div>

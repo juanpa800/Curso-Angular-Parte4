@@ -1,1 +1,8 @@
-<p>guest-list works!</p>
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <ul class="my-1">
+            <li><span [ngClass]="{saraName:guest.name == 'Sara'}">{{guest.name}}</span> {{guest.lastName}}
+                {{guest.relationship}} is {{guest.years}} years old</li>
+        </ul>
+    </div>
+</div>

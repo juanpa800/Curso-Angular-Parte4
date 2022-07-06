@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Guest } from '../guest.model';
 
 @Component({
   selector: 'app-guest-list',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class GuestListComponent implements OnInit {
 
   constructor() { }
-
+  @Input() guest: Guest;
   ngOnInit(): void {
   }
 

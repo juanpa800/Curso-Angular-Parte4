@@ -4,6 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    // I dont need initialize any variable
+    "strictPropertyInitialization": false,
+    // 
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
