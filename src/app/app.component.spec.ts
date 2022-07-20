@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Guest } from './guest.model';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -26,6 +27,11 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Curso-Angular-Parte4 app is running!');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Welcome to my Angular course number 4');
+  });
+
+  it('should add a custom guest', () => {
+    const testGuest = new Guest('Lucas','Lemus','Brother', 30);
+    expect(100).toEqual(100);
   });
 });

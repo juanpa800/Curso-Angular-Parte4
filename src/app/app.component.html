@@ -87,9 +87,7 @@
               </div>
             </div>
           </div>
-          <div *ngIf="modePresentation == 'list'; else table">
-            <app-guest-list *ngFor="let guest of guests" [guest] ="guest"></app-guest-list>
-          </div>
+          <app-guest-list *ngIf="modePresentation == 'list'; else table" [guests]="guests"></app-guest-list>
         </div>
       </div>
     </div>
@@ -97,5 +95,5 @@
 </body>
 
 <ng-template #table>
-  <app-guest-table [guests] ="guests"></app-guest-table>
+  <app-guest-table [guests]="guests"></app-guest-table>
 </ng-template>

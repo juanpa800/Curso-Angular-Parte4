@@ -9,7 +9,7 @@ import { Guest } from '../guest.model';
 export class GuestListComponent implements OnInit {
 
   constructor() { }
-  @Input() guest: Guest;
+  @Input() guests: Guest[];
   ngOnInit(): void {
   }
 
